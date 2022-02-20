@@ -1,13 +1,18 @@
 import random
 """
-Performing the Employee wage computaion
+Performing the Employee wage computation
 checking Employee present or not
+Adding the wage_per_day and full_day_hour
 """
 print("Welcome to Employee Wage Computation")
 
-attendence = random.randint(0, 1)
+WAGE_PER_HR = 20
+FULL_DAY_HR = 8
 
-if attendence == 1:
-    print("employee is present:", attendence)
-else:
-    print("employee is absent:", attendence)
+
+attendence = random.randint(0, 2)
+
+print(f'Attendance {attendence}')
+
+wage_per_day = WAGE_PER_HR * FULL_DAY_HR
+print('Wage per day {}'.format(wage_per_day))
