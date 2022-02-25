@@ -8,19 +8,17 @@ Adding the parttimer and hour
 """
 print("Welcome to Employee Wage Computation")
 
-WAGE_PER_HR = 20
-FULL_DAY_HR = 8
-PART_TIME_HR = 6  # adding parttime wage
+WAGE_PER_DAY = 20
+FULL_DAY_HOUR = 8
+PART_TIMER = 6  # adding parttime wage
 
 attendance = random.randint(0, 2)
 
-if attendance == 0:
-    print("absent")
-elif attendance == 1:  # adding partime
-    hours = PART_TIME_HR
-    wage = PART_TIME_HR * WAGE_PER_HR
-    print("Today Present but par time wage is", wage, hours)
-else:
-    hours = FULL_DAY_HR
-    wage = FULL_DAY_HR * WAGE_PER_HR
-    print("today present and for full day", wage, hours)
+
+# adding switchcase:
+wage_calculation = {
+        0: {'attendance': 'absent', 'wage': 0, 'worked_hr': 0},
+        1: {'attendance': 'present', 'wage': WAGE_PER_DAY, 'worked_hr': FULL_DAY_HOUR},
+        2: {'attendance': 'part-time', 'wage': WAGE_PER_DAY, 'worked_hr': PART_TIMER}
+    }
+print('Wage according to attendance :', wage_calculation.get(attendance))
